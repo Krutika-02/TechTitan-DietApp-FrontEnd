@@ -18,6 +18,7 @@ $("#loginForm").submit(function (e) {
         success: (response) => {
             alert("Login successful!");
             localStorage.setItem("userToken", response.token);
+            localStorage.setItem("userName", response.first_name);
             window.location.href = "dashboard.html";
         },
         error: (xhr) => {
@@ -125,8 +126,19 @@ $(document).ready(function () {
                 $("#dietitianList").html(dietitianList);
             },
             error: () => {
-                $("#dietitianList").html(`<p class="text-danger">Future Enhancement :).</p>`);
+                $("#dietitianList").html(`<p class="text-danger"></p>`);
             },
         });
     }
+});
+
+$("#logoutBtn").click(function (e) {
+    e.preventDefault();
+
+    // Clear user data (token) from localStorage to end the session
+    localStorage.removeItem("userToken");
+    localStorage.removeItem("userName");
+
+    // Redirect to login page
+    window.location.href = "login.html";
 });
