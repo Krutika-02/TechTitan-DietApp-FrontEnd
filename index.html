@@ -5,22 +5,244 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diet Planning App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <div id="chatbot-container"></div>
+    <script src="js/chatbot.js" defer></script>
+    <script>
+        // Load the chatbot dynamically
+        fetch('chatbot.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('chatbot-container').innerHTML = data;
+            });
+            
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(to right, #00ff9d, #00c6ff);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .header-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .header-section .btn-primary {
+            padding: 10px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .header-section .btn-primary:hover {
+            background-color: #00b34e;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 20px;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-card img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(to right, #00ff9d, #00c6ff);
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .testimonial p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonial span {
+            font-weight: 600;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer-section a {
+            color: #00c6ff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Diet Planning App</a>
-        <div class="collapse navbar-collapse">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
             </ul>
         </div>
     </nav>
-    <header class="jumbotron text-center">
-        <h1>Welcome to the Diet Planning and Nutrition Management App</h1>
-        <p>Optimize your diet, plan meals, and stay healthy with us!</p>
+
+    <!-- Header Section -->
+    <div class="header-section">
+        <h1>Welcome to Your Nutrition Partner</h1>
+        <p>Plan your meals, manage your nutrition, and achieve your health goals with ease.</p>
         <a href="register.html" class="btn btn-primary">Get Started</a>
-    </header>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="features-section">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2983/2983785.png" alt="Meal Planning">
+                        <h5>Meal Planning</h5>
+                        <p>Create personalized diet plans tailored to your preferences and goals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2622/2622048.png" alt="Nutrition Tracking">
+                        <h5>Nutrition Management</h5>
+                        <p>Track your calorie and nutrient intake to stay on top of your health.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950871.png" alt="Community Support">
+                        <h5>Diet Planning</h5>
+                        <p>Create personalized diet plans tailored to your preferences and goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2>What Our Users Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="assets/images/vijju.png" alt="User 1">
+                        <p>"This app transformed the way I eat. I feel healthier and more energetic!"</p>
+                        <span>- Tejashwini.</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="assets/images/teju.jpg" alt="User 2">
+                        <p>"Meal planning has never been so easy. Highly recommend this app!"</p>
+                        <span>- Vijayalaxmi.</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        <img src="assets/images/nisarga.jpg" alt="User 3">
+                        <p>"A perfect tool to stay on track with my diet and fitness goals."</p>
+                        <span>- Nisarga.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer-section">
+        <p>&copy; 2024 Diet Planning App. Designed with ❤️ by Your Team. <a href="#">Privacy Policy</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
