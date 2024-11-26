@@ -6,6 +6,18 @@
     <title>User Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Include Chatbot -->
+    <link rel="stylesheet" href="css/chatbot.css">
+    <div id="chatbot-container"></div>
+    <script src="js/chatbot.js" defer></script>
+    <script>
+        // Load the chatbot dynamically
+        fetch('chatbot.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('chatbot-container').innerHTML = data;
+            });
+    </script>
 </head>
 <body>
     <div class="container mt-5">

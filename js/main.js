@@ -18,7 +18,7 @@ $("#loginForm").submit(function (e) {
         success: (response) => {
             alert("Login successful!");
             localStorage.setItem("userToken", response.token);
-            window.location.href = "user-dashboard.html";
+            window.location.href = "dashboard.html";
         },
         error: (xhr) => {
             const errorMessage = xhr.responseJSON?.detail || "Login failed. Please try again.";
@@ -91,7 +91,6 @@ $("#dietPlanForm").submit(function (e) {
         data: JSON.stringify(formData),
         success: (response) => {
             const formattedPlan = `
-                <h4 class="text-primary">BMI: ${response.bmi.toFixed(1)}</h4>
                 <p>${response.diet_plan
                     .replace(/[*]/g, "") // Remove all asterisks
                     .replace(/\n/g, "<br>") // Replace line breaks with <br>
@@ -126,7 +125,7 @@ $(document).ready(function () {
                 $("#dietitianList").html(dietitianList);
             },
             error: () => {
-                $("#dietitianList").html(`<p class="text-danger">Failed to load dietitians.</p>`);
+                $("#dietitianList").html(`<p class="text-danger">Future Enhancement :).</p>`);
             },
         });
     }
